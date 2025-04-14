@@ -1,9 +1,148 @@
+// ########### Q.1
+
+                function palindrome(input) {
+                    
+                }
 
 
 
 
 
 
+// ########### Q.2
+
+
+//             function maxx(input){
+//             let max = input[0]
+//                 for(let i = 1; i < input.length; i++){
+//                     if(input[i] > max){
+//                         max = input[i]
+//                     }
+//                 }
+//                 return max
+//             }
+
+
+//             console.log(maxx([1,2,1000,3,-1]));
+
+
+
+
+// // ########### Q.3
+
+
+//             function factorial (n) {
+//                 let outcome = 1;
+//                 for(let i = 1; i <= n; i++){
+//                     outcome *=(i);
+//                 }
+
+//                 return outcome;
+//             }
+
+//             console.log(factorial(4));
+
+
+
+
+// // ########### Q.4
+
+
+
+//             function sum(n){
+//                 let result = 0
+//                 for(let i = 0; i <= n; i++){
+//                     result +=(i)
+//                 }
+
+//                 return result
+//             }
+
+
+
+//             console.log(sum(4));
+            
+
+
+
+// // ########### Q.5
+
+//             function stringInput(input){
+//                 vowel = "aeiouAEIOU"
+//                 let count = 0
+//             for(let i = 0; i < input.length; i++){
+//                 for(let j = 0; j < vowel.length; j++){
+//                 if(vowel[j] === (input[i])){
+//                     count++
+//                 }
+//             }
+//         }
+               
+//                 return count;
+
+//             }
+
+//             console.log(stringInput("Detectors"));
+            
+            
+
+
+
+
+// ########### Q.6
+
+            //    function primeNum(n){
+            //     for(let i = 1; i <= n; i++){
+            //         if(n % 2 == 0){
+            //             console.log(false);
+            //             break
+
+            //         } else {
+            //             console.log(true);
+            //             break
+                        
+            //         }
+            //     }
+            //    }
+
+            //    primeNum(15)
+
+
+
+
+// ########### Q.7
+
+            //     let mult = []
+            //    function multiples(n){
+            //     for( let i = 1; i <= n; i++){
+            //        mult.push(n * i)
+            //     }
+            //     return mult
+
+            //    }
+
+            //    console.log(multiples(3));
+
+           
+
+// ########### Q.8
+
+               let array = [1,2,3,4,5,10,30,50]
+
+               function index(n){
+                for(let i = 0; i < array.length; i++){
+                    for( let j = 0; j < n; j++){
+                    if(n == array[i]){
+                        return i
+                    }}
+                }
+               }
+               
+               console.log(index(1));
+               
+
+
+// ########### Q.9
 
 
 
@@ -124,21 +263,25 @@ console.log("-------------------------------------------------------------------
 
 // SEARCH MEMBER
 
-function searchMember(name){
+function searchMember(search){
 
 
-    let searchMember = adashe.find((member) => member.name.toLowerCase() === name.toLowerCase());
-                    
-                if (searchMember) {
-                     console.log( searchMember);
+    // let searchMember = adashe.find((member) => member.name.toLowerCase() === name.toLowerCase());
+                    search = search.toLowerCase();
+            for(let i = 0; i < adashe.length; i++){
+                if (adashe[i].name.toLowerCase() === search) {
+                     console.log("User found: ", adashe[i]);
+                    break
                 } else {
                   console.log("User not found");
+                 
                 }
+            }
 
 }
 
     searchMember("joy")
-    searchMember("PETERs")
+    
 
 
 
@@ -151,48 +294,48 @@ console.log("-------------------------------------------------------------------
 
 // WITHDRAW
 
-function withdraw(nameIn, cashout){
+// function withdraw(nameIn, cashout){
 
-    nameIn = nameIn.toLowerCase();
+//     nameIn = nameIn.toLowerCase();
 
-    for(let index in adashe){
-        if(adashe[index].name === nameIn){
-            if(cashout > adashe[index].amount){
-                console.log("Insufficient funds");
+//     for(let index in adashe){
+//         if(adashe[index].name === nameIn){
+//             if(cashout > adashe[index].amount){
+//                 console.log("Insufficient funds");
                 
-            } else{
-                adashe[index].amount -= cashout
-                console.log("AFTER WITHDRAWING", adashe);
-            }
-            return
-        } 
+//             } else{
+//                 adashe[index].amount -= cashout
+//                 console.log("AFTER WITHDRAWING", adashe);
+//             }
+//             return
+//         } 
     
-    }
+//     }
 
- console.log("User not found");
+//  console.log("User not found");
  
 
-}
+// }
 
-withdraw("peter", 200)
-
-
-
-
-console.log("----------------------------------------------------------------------------");
+// withdraw("monicah", 2000)
 
 
 
-// REMOVE MEMBER
+
+// console.log("----------------------------------------------------------------------------");
 
 
-function removeMember(id){
-        adashe.splice(id -1, 1)
-}
 
-removeMember(8)
+// // REMOVE MEMBER
 
-console.log("AFTER REMOVING A MEMBER:", adashe);
+
+// function removeMember(){
+//         adashe.pop()
+// }
+
+// removeMember()
+
+// console.log("AFTER REMOVING A MEMBER:", adashe);
 
 
     
