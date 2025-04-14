@@ -1,9 +1,18 @@
 // ########### Q.1
 
-                function palindrome(input) {
-                    
-                }
-
+// function Palindrome(str) {
+//         let left = 0;
+//         let right = str.length - 1;
+//         while (left < right) {
+//             if (str[left] !== str[right]) {
+//                 return false;
+//             }
+//             left++;
+//             right--;
+//         }
+//         return true;
+//     }
+//     console.log(Palindrome('dad'))
 
 
 
@@ -127,22 +136,63 @@
 
 // ########### Q.8
 
-               let array = [1,2,3,4,5,10,30,50]
+            //    let array = [1,2,3,4,5,10,30,50]
 
-               function index(n){
-                for(let i = 0; i < array.length; i++){
-                    for( let j = 0; j < n; j++){
-                    if(n == array[i]){
-                        return i
-                    }}
+            //    function index(n){
+            //     for(let i = 0; i < array.length; i++){
+            //         for( let j = 0; j < n; j++){
+            //         if(n == array[i]){
+            //             return i
+            //         }}
+            //     }
+            //    }
+               
+            //    console.log(index(1));
+               
+
+
+// // ########### Q.9
+
+    let together = []
+    let arr1 = [0,4,6]
+    let arr2 = [1,2,3]
+            function merge (arr1, arr2) {
+                   
+                    for(let i = 0; i < arr1.length; i++){
+                        together[together.length] = arr1[i]
+                    }
+                    for(let i = 0; i <arr2.length; i++){
+                        together[together.length] = arr2[i]
+                    }
+
+                    return together
+                    }
+
+                    
+                        console.log(merge(arr1, arr2));
+
+                function sort(array){
+                    let sorted = []
+                    for(let i = 0; i < array.length; i++ ){
+                        let current = array[i];
+                        let j = sorted.length -1
+                        while(j >= 0 && sorted[j] > current){
+                            j--
+                        } 
+                        sorted[sorted.length] = current
+                        for(let k = sorted.length -1; k > j +1; k--){
+                            sorted[k] = sorted[k - 1] 
+                        }
+                        sorted[j + 1] = current
+                    }
+
+                    console.log(sorted);
+                    
                 }
-               }
-               
-               console.log(index(1));
-               
+                    
+                    sort(together)
+                    
 
-
-// ########### Q.9
 
 
 
@@ -154,145 +204,139 @@
 
 
 
-let adashe = [{
-    name: "benson",
-    gender: "m",
-    amount: 200,
-    id:1
+// let adashe = [{
+//     name: "benson",
+//     gender: "m",
+//     amount: 200,
+//     id:1
     
-},
+// },
 
-{
-    name: "ada",
-    gender: "f",
-    amount: 700,
-    id:2
+// {
+//     name: "ada",
+//     gender: "f",
+//     amount: 700,
+//     id:2
       
-},
+// },
 
-{
-    name: "micheal",
-    gender: "m",
-    amount: 400,
-    id:3
+// {
+//     name: "micheal",
+//     gender: "m",
+//     amount: 400,
+//     id:3
     
-}
-]
+// }
+// ]
 
-console.log("MEMBER BEFORE ADDING:", adashe);
-
-
-console.log("----------------------------------------------------------------------------");
+// console.log("MEMBER BEFORE ADDING:", adashe);
 
 
+// console.log("----------------------------------------------------------------------------");
 
-// ADD MEMBER FUNCTION
 
-function addMember(name, gender, amount){
-    let id = adashe.length +1
 
-    name = name.toLowerCase();
+// // ADD MEMBER FUNCTION
 
-    let member = {
-        name: name,
-        gender: gender ,
-        amount: amount,
-        id: id
-    }
+// function addMember(name, gender, amount){
+//     let id = adashe.length +1
 
-    let userExists = adashe.some(adashe => adashe.name.toLowerCase() === member.name.toLowerCase());
+//     name = name.toLowerCase();
 
-    // let update = adashe.findIndex(adashe => adashe.name.toLowerCase() === member.name.toLowerCase());
+//     let member = {
+//         name: name,
+//         gender: gender ,
+//         amount: amount,
+//         id: id
+//     }
 
-    if(!userExists){
-        adashe.push(member)
-     console.log("User added: ", member);
+//     let userExists = adashe.some(adashe => adashe.name.toLowerCase() === member.name.toLowerCase());
+
+//     if(!userExists){
+//         adashe.push(member)
+//      console.log("User added: ", member);
      
-     } 
-    // else if(update === -1){
-    //     console.log(" ");
-        
-    // } else if(adashe[update] = member) {
-    //     console.log("User updated", member);
-        
-        
-    // }
+//      } 
     
-    else{
-        console.log("User already exists. Not added");
+//     else if(userExists){
+//         amount += amount
+//         console.log("User already exists. Not added");
         
-    }
-}
+//     }
+// }
 
 
-console.log("MEMBERS AFTER ADDING: ");
+// console.log("MEMBERS AFTER ADDING: ");
 
-addMember("Joel", "m", 600)
-addMember("Blessing", "f", 100)
-addMember("Pascal", "m", 1200)
-addMember("Joy", "f", 500)
-addMember("Ella", "f", 700)
-addMember("monica", "f", 600)
-addMember("Peter", "m", 300)
-addMember("Esther", "f", 900)
-addMember("Elijah", "m", 800)
-addMember("peter", "m", 1000)
+// addMember("Joel", "m", 600)
+// addMember("Blessing", "f", 100)
+// addMember("Pascal", "m", 1200)
+// addMember("Joy", "f", 500)
+// addMember("Ella", "f", 700)
+// addMember("monica", "f", 600)
+// addMember("Peter", "m", 300)
+// addMember("Esther", "f", 900)
+// addMember("Elijah", "m", 800)
+// addMember("peter", "m", 1000)
+// addMember("peter", "m", 100)
 
-console.log("----------------------------------------------------------------------------");
-
-
-
-
-// ALL MEMBERS
-
-
-console.log("ALL MEMBERS: ");
-
-adashe.forEach(allMembers)
-
-function allMembers(members){
-    console.log("MEMBER:  ", members);
-}
+// console.log("----------------------------------------------------------------------------");
 
 
 
 
-console.log("----------------------------------------------------------------------------");
+// // ALL MEMBERS
+
+
+// console.log("ALL MEMBERS: ");
+
+// adashe.forEach(allMembers)
+
+// function allMembers(members){
+//     console.log("MEMBER:  ", members);
+// }
 
 
 
-// SEARCH MEMBER
 
-function searchMember(search){
+// console.log("----------------------------------------------------------------------------");
 
 
-    // let searchMember = adashe.find((member) => member.name.toLowerCase() === name.toLowerCase());
-                    search = search.toLowerCase();
-            for(let i = 0; i < adashe.length; i++){
-                if (adashe[i].name.toLowerCase() === search) {
-                     console.log("User found: ", adashe[i]);
-                    break
-                } else {
-                  console.log("User not found");
-                 
-                }
-            }
 
-}
+// // SEARCH MEMBER
 
-    searchMember("joy")
+//             function searchMember(search){
+
+//                     search = search.toLowerCase();
+//                     let found = false
+//             for(let i = 0; i < adashe.length; i++){
+//                 if (adashe[i].name.toLowerCase() === search) {
+//                      console.log("User found: ", adashe[i]);
+//                      found = true
+//                     break
+//                 } 
+//             }
+
+//         if(!found){
+//             console.log("User not found");
+            
+//         }
+
+// }
+
+//     searchMember("joy")
     
 
 
 
 
-console.log("----------------------------------------------------------------------------");
+// console.log("----------------------------------------------------------------------------");
 
 
 
 
 
-// WITHDRAW
+// // WITHDRAW
 
 // function withdraw(nameIn, cashout){
 
@@ -317,7 +361,7 @@ console.log("-------------------------------------------------------------------
 
 // }
 
-// withdraw("monicah", 2000)
+// withdraw("monica", 2000)
 
 
 
